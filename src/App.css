@@ -23,57 +23,214 @@
 }
 
 #root {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   text-align: center;
   font-family: "Figtree", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-  height: 13vh;
+  height: auto;
+  min-height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0;
 }
 
 header h1 {
-  font-size: 40px;
+  font-size: clamp(24px, 6vw, 40px);
   color: var(--color-text-title);
 }
 
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
 .capa-album {
-  width: 25vw;
+  width: 100%;
+  max-width: 320px;
+  min-width: 200px;
+  height: auto;
   border-radius: 16px;
-  transition: linear 100ms;
+  transition: transform 0.2s ease;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .capa-album:hover {
-  width: 25.3vw;
+  transform: scale(1.05);
   cursor: pointer;
+}
+
+.info {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 1rem;
 }
 
 .nome-musica {
   color: var(--color-link);
-  margin-top: 5vh;
-  font-size: 30px;
+  margin-bottom: 1rem;
+  font-size: clamp(18px, 4vw, 30px);
+  line-height: 1.4;
 }
 
 .nome-musica span {
   color: var(--color-text-by);
-  font-size: 20px;
+  font-size: clamp(14px, 3vw, 20px);
+  display: block;
 }
 
 .verso-escolhido {
   color: var(--color-text-title);
-  margin-top: 3vh;
-  font-size: 25px;
+  font-size: clamp(16px, 3.5vw, 25px);
+  line-height: 1.5;
+  margin: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid var(--color-link);
 }
 
 .showWelcome {
-  padding: 10px;
-  margin: 10px 0;
+  background: var(--color-link);
+  color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  font-size: clamp(14px, 2.5vw, 16px);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  #root {
+    padding: 0 2rem;
+  }
+  
+  .container {
+    gap: 2rem;
+  }
+  
+  .capa-album {
+    max-width: 350px;
+  }
+  
+  .nome-musica span {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  
+  .verso-escolhido {
+    padding: 1.5rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  #root {
+    padding: 0 3rem;
+  }
+  
+  .container {
+    gap: 2.5rem;
+  }
+  
+  .capa-album {
+    max-width: 400px;
+  }
+  
+  .info {
+    max-width: 700px;
+  }
+}
+
+/* Telas grandes */
+@media (min-width: 1440px) {
+  .container {
+    gap: 3rem;
+  }
+  
+  .capa-album {
+    max-width: 450px;
+  }
+  
+  .info {
+    max-width: 800px;
+  }
+}
+
+/* Dispositivos muito pequenos */
+@media (max-width: 480px) {
+  #root {
+    padding: 0 0.5rem;
+  }
+  
+  header {
+    min-height: 8vh;
+    padding: 0.5rem 0;
+  }
+  
+  .container {
+    gap: 1rem;
+  }
+  
+  .capa-album {
+    min-width: 180px;
+    max-width: 280px;
+  }
+  
+  .verso-escolhido {
+    padding: 0.75rem;
+    font-size: clamp(14px, 3vw, 18px);
+  }
+  
+  .showWelcome {
+    padding: 0.75rem;
+    font-size: 14px;
+  }
+}
+
+/* Orientação landscape em mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    min-height: auto;
+    padding: 0.5rem 0;
+  }
+  
+  header h1 {
+    font-size: clamp(20px, 4vw, 28px);
+  }
+  
+  .container {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+  
+  .capa-album {
+    max-width: 200px;
+    flex-shrink: 0;
+  }
+  
+  .info {
+    text-align: left;
+    max-width: 400px;
+  }
 }

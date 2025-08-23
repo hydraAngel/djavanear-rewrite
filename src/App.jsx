@@ -111,29 +111,34 @@ function App() {
       ];
     setVersoMostrado(versoEscolhido);
   }, [versosCompletosAtuais]);
+
   return (
     <>
       <header>
         <h1>DJAVANEAR</h1>
       </header>
-      {showWelcome && (
-        <div className="showWelcome">
-          🎉 Bem-vindo(a) ao aplicativo! Clique na imagem para gerar um verso.
-        </div>
-      )}
+      
+      <div className="container">
+        {showWelcome && (
+          <div className="showWelcome">
+            🎉 Bem-vindo(a) ao aplicativo! Clique na imagem para gerar um verso.
+          </div>
+        )}
 
-      <img
-        src={albumAtual + ".jpg"}
-        onClick={handleClickImage}
-        alt={"capa do álbum " + albumAtual}
-        className="capa-album"
-      ></img>
-      <div className="info">
-        <h2 className="nome-musica">
-          <span>Djavan disse em: </span>
-          {musicaAtual}
-        </h2>
-        <h3 className="verso-escolhido">{versoMostrado}</h3>
+        <img
+          src={albumAtual + ".jpg"}
+          onClick={handleClickImage}
+          alt={"capa do álbum " + albumAtual}
+          className="capa-album"
+        />
+        
+        <div className="info">
+          <h2 className="nome-musica">
+            <span>Djavan disse em: </span>
+            {musicaAtual}
+          </h2>
+          <h3 className="verso-escolhido">{versoMostrado}</h3>
+        </div>
       </div>
     </>
   );
