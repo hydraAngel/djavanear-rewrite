@@ -92,7 +92,7 @@ function App() {
       setAlbumAtual(albumparatrocar.id);
       setTemaAtual(albumparatrocar.id);
       updateFavicon("/" + albumparatrocar.id + ".jpg")
-      document.title = albumAtual;
+      document.title = albumparatrocar.name;
     });
   };
 
