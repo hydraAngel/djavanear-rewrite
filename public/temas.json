@@ -1,0 +1,422 @@
+[
+  {
+    "id": "1",
+    "name": "A Voz • O Violão • A Música de Djavan",
+    "className": "theme-1",
+    "variables": {
+      "--color-text-by": "#211c15",
+      "--color-text-title": "#211c15",
+      "--color-bg": "#d2c3b1",
+      "--color-shadow": "#786553",
+      "--color-shadow-sec": "#6dae5e",
+      "--color-verse": "#2380b0",
+      "--color-overlay": "rgba(210, 195, 177, 0.7)",
+      "--color-link": "#211c15"
+    }
+  },
+  {
+    "id": "2",
+    "name": "Djavan",
+    "className": "theme-2",
+    "variables": {
+      "--color-text-by": "#161616",
+      "--color-text-title": "#161616",
+      "--color-bg": "#7f7f7d",
+      "--color-shadow": "#434342",
+      "--color-shadow-sec": "#646462",
+      "--color-verse": "#5b5c5a",
+      "--color-overlay": "rgba(127, 127, 125, 0.7)",
+      "--color-link": "#161616"
+    }
+  },
+  {
+    "id": "3",
+    "name": "Alumbramento",
+    "className": "theme-3",
+    "variables": {
+      "--color-text-by": "#273237",
+      "--color-text-title": "#273237",
+      "--color-bg": "#e8e590",
+      "--color-shadow": "#bc9074",
+      "--color-shadow-sec": "#bc2e33",
+      "--color-verse": "#d9dde4",
+      "--color-overlay": "rgba(232, 229, 144, 0.7)",
+      "--color-link": "#273237"
+    }
+  },
+  {
+    "id": "4",
+    "name": "Seduzir",
+    "className": "theme-4",
+    "variables": {
+      "--color-text-by": "#5a4c24",
+      "--color-text-title": "#2b1b13",
+      "--color-bg": "#edd36f",
+      "--color-shadow": "#d8522f",
+      "--color-shadow-sec": "#ea8136",
+      "--color-verse": "#843826",
+      "--color-overlay": "rgba(237, 211, 111, 0.7)",
+      "--color-link": "#5a4c24"
+    }
+  },
+  {
+    "id": "5",
+    "name": "Luz",
+    "className": "theme-5",
+    "variables": {
+      "--color-text-by": "#101611",
+      "--color-text-title": "#101611",
+      "--color-bg": "#c9cebc",
+      "--color-shadow": "#8f9c7f",
+      "--color-shadow-sec": "#6d7e5e",
+      "--color-verse": "#475e3d",
+      "--color-overlay": "rgba(201, 206, 188, 0.7)",
+      "--color-link": "#101611"
+    }
+  },
+  {
+    "id": "6",
+    "name": "Lilás",
+    "className": "theme-6",
+    "variables": {
+      "--color-text-by": "#35513e",
+      "--color-text-title": "#090a09",
+      "--color-bg": "#b9cabe",
+      "--color-shadow": "#669574",
+      "--color-shadow-sec": "#4e6c57",
+      "--color-verse": "#35513e",
+      "--color-overlay": "rgba(185, 202, 190, 0.7)",
+      "--color-link": "#35513e"
+    }
+  },
+  {
+    "id": "7",
+    "name": "Meu Lado",
+    "className": "theme-7",
+    "variables": {
+      "--color-text-by": "#35513e",
+      "--color-text-title": "#090a09",
+      "--color-bg": "#b9cabe",
+      "--color-shadow": "#669574",
+      "--color-shadow-sec": "#4e6c57",
+      "--color-verse": "#35513e",
+      "--color-overlay": "rgba(185, 202, 190, 0.7)",
+      "--color-link": "#35513e"
+    }
+  },
+  {
+    "id": "8",
+    "name": "Não é Azul Mas é Mar",
+    "className": "theme-8",
+    "variables": {
+      "--color-text-by": "#5d6676",
+      "--color-text-title": "#333130",
+      "--color-bg": "#e4e4e4",
+      "--color-shadow": "#908d8c",
+      "--color-shadow-sec": "#787778",
+      "--color-verse": "#a5acb5",
+      "--color-overlay": "rgba(228, 228, 228, 0.7)",
+      "--color-link": "#5d6676"
+    }
+  },
+  {
+    "id": "9",
+    "name": "Djavan (Oceano)",
+    "className": "theme-9",
+    "variables": {
+      "--color-text-by": "#080808",
+      "--color-text-title": "#080808",
+      "--color-bg": "#9d9d9d",
+      "--color-shadow": "#878787",
+      "--color-shadow-sec": "#616161",
+      "--color-verse": "#434546",
+      "--color-overlay": "rgba(157, 157, 157, 0.7)",
+      "--color-link": "#080808"
+    }
+  },
+  {
+    "id": "10",
+    "name": "Coisa de Acender",
+    "className": "theme-10",
+    "variables": {
+      "--color-text-by": "#61061d",
+      "--color-text-title": "#0d0407",
+      "--color-bg": "#dbbe75",
+      "--color-shadow": "#b0171d",
+      "--color-shadow-sec": "#ba499e",
+      "--color-verse": "#61061d",
+      "--color-overlay": "rgba(219, 190, 117, 0.7)",
+      "--color-link": "#61061d"
+    }
+  },
+  {
+    "id": "11",
+    "name": "Novena",
+    "className": "theme-11",
+    "variables": {
+      "--color-text-by": "#2e59ac",
+      "--color-text-title": "#663e63",
+      "--color-bg": "#dcd3e1",
+      "--color-shadow": "#2e59ac",
+      "--color-shadow-sec": "#d20912",
+      "--color-verse": "#c43089",
+      "--color-overlay": "rgba(220, 211, 225, 0.7)",
+      "--color-link": "#2e59ac"
+    }
+  },
+  {
+    "id": "12",
+    "name": "Malásia",
+    "className": "theme-12",
+    "variables": {
+      "--color-text-by": "#3c445c",
+      "--color-text-title": "#070606",
+      "--color-bg": "#e5af68",
+      "--color-shadow": "#5b4546",
+      "--color-shadow-sec": "#6c6893",
+      "--color-verse": "#8a4a34",
+      "--color-overlay": "rgba(229, 175, 104, 0.7)",
+      "--color-link": "#3c445c"
+    }
+  },
+  {
+    "id": "13",
+    "name": "Bicho Solto O XIII",
+    "className": "theme-13",
+    "variables": {
+      "--color-text-by": "#3d3533",
+      "--color-text-title": "#3d3533",
+      "--color-bg": "#f2f0eb",
+      "--color-shadow": "#b4aca6",
+      "--color-shadow-sec": "#978c86",
+      "--color-verse": "#7b7470",
+      "--color-overlay": "rgba(242, 240, 235, 0.7)",
+      "--color-link": "#3d3533"
+    }
+  },
+  {
+    "id": "14",
+    "name": "Djavan ao Vivo",
+    "className": "theme-14",
+    "variables": {
+      "--color-text-by": "#18131c",
+      "--color-text-title": "#18131c",
+      "--color-bg": "#ba937c",
+      "--color-shadow": "#6f534d",
+      "--color-shadow-sec": "#424d68",
+      "--color-verse": "#859099",
+      "--color-overlay": "rgba(186, 147, 124, 0.7)",
+      "--color-link": "#18131c"
+    }
+  },
+  {
+    "id": "15",
+    "name": "Djavan ao Vivo",
+    "className": "theme-15",
+    "variables": {
+      "--color-text-by": "#6d4d6b",
+      "--color-text-title": "#2f394d",
+      "--color-bg": "#d1d1c5",
+      "--color-shadow": "#7b7a8e",
+      "--color-shadow-sec": "#6d4d6b",
+      "--color-verse": "#a08394",
+      "--color-overlay": "rgba(209, 209, 197, 0.7)",
+      "--color-link": "#6d4d6b"
+    }
+  },
+  {
+    "id": "16",
+    "name": "Milagreiro",
+    "className": "theme-16",
+    "variables": {
+      "--color-text-by": "#2f292e",
+      "--color-text-title": "#2f292e",
+      "--color-bg": "#98bdc8",
+      "--color-shadow": "#d89e72",
+      "--color-shadow-sec": "#996953",
+      "--color-verse": "#687c90",
+      "--color-overlay": "rgba(152, 189, 200, 0.7)",
+      "--color-link": "#2f292e"
+    }
+  },
+  {
+    "id": "17",
+    "name": "Vaidade",
+    "className": "theme-17",
+    "variables": {
+      "--color-text-by": "#3b4440",
+      "--color-text-title": "#282627",
+      "--color-bg": "#e7e7e8",
+      "--color-shadow": "#585554",
+      "--color-shadow-sec": "#7e7f82",
+      "--color-verse": "#9d9c9f",
+      "--color-overlay": "rgba(231, 231, 232, 0.7)",
+      "--color-link": "#3b4440"
+    }
+  },
+  {
+    "id": "18",
+    "name": "Na Pista, ETC",
+    "className": "theme-18",
+    "variables": {
+      "--color-text-by": "#5f4699",
+      "--color-text-title": "#5f4699",
+      "--color-bg": "#ecd7db",
+      "--color-shadow": "#d1a9a5",
+      "--color-shadow-sec": "#ad8ba4",
+      "--color-verse": "#b18887",
+      "--color-overlay": "rgba(236, 215, 219, 0.7)",
+      "--color-link": "#5f4699"
+    }
+  },
+  {
+    "id": "19",
+    "name": "Matizes",
+    "className": "theme-19",
+    "variables": {
+      "--color-text-by": "#2d3a46",
+      "--color-text-title": "#0b0d0e",
+      "--color-bg": "#9fa2a0",
+      "--color-shadow": "#535b60",
+      "--color-shadow-sec": "#758994",
+      "--color-verse": "#5b7488",
+      "--color-overlay": "rgba(159, 162, 160, 0.7)",
+      "--color-link": "#2d3a46"
+    }
+  },
+  {
+    "id": "20",
+    "name": "Ária",
+    "className": "theme-20",
+    "variables": {
+      "--color-text-by": "#610909",
+      "--color-text-title": "#100404",
+      "--color-bg": "#cfc5c0",
+      "--color-shadow": "#610909",
+      "--color-shadow-sec": "#aa0f0f",
+      "--color-verse": "#848483",
+      "--color-overlay": "rgba(207, 197, 192, 0.7)",
+      "--color-link": "#610909"
+    }
+  },
+  {
+    "id": "21",
+    "name": "Ária Ao Vivo",
+    "className": "theme-21",
+    "variables": {
+      "--color-text-by": "#3c096b",
+      "--color-text-title": "#1e051c",
+      "--color-bg": "#e6a6b0",
+      "--color-shadow": "#73204e",
+      "--color-shadow-sec": "#a73b70",
+      "--color-verse": "#6a0ea4",
+      "--color-overlay": "rgba(230, 166, 176, 0.7)",
+      "--color-link": "#3c096b"
+    }
+  },
+  {
+    "id": "22",
+    "name": "Rua dos Amores",
+    "className": "theme-22",
+    "variables": {
+      "--color-text-by": "#3c4c4c",
+      "--color-text-title": "#151519",
+      "--color-bg": "#e7e8f0",
+      "--color-shadow": "#535559",
+      "--color-shadow-sec": "#7f858a",
+      "--color-verse": "#999ea4",
+      "--color-overlay": "rgba(231, 232, 240, 0.7)",
+      "--color-link": "#3c4c4c"
+    }
+  },
+  {
+    "id": "23",
+    "name": "Rua Dos Amores Ao Vivo",
+    "className": "theme-23",
+    "variables": {
+      "--color-text-by": "#4e352f",
+      "--color-text-title": "#4e352f",
+      "--color-bg": "#e6d0aa",
+      "--color-shadow": "#945e3f",
+      "--color-shadow-sec": "#b46b3d",
+      "--color-verse": "#aaa080",
+      "--color-overlay": "rgba(230, 208, 170, 0.7)",
+      "--color-link": "#4e352f"
+    }
+  },
+  {
+    "id": "24",
+    "name": "Vidas Pra Contar",
+    "className": "theme-24",
+    "variables": {
+      "--color-text-by": "#3c2b29",
+      "--color-text-title": "#3c2b29",
+      "--color-bg": "#efd3b9",
+      "--color-shadow": "#b98265",
+      "--color-shadow-sec": "#d7a780",
+      "--color-verse": "#916754",
+      "--color-overlay": "rgba(239, 211, 185, 0.7)",
+      "--color-link": "#3c2b29"
+    }
+  },
+  {
+    "id": "25",
+    "name": "Com Mais Ninguém",
+    "className": "theme-25",
+    "variables": {
+      "--color-text-by": "#924a2a",
+      "--color-text-title": "#2c160d",
+      "--color-bg": "#e9d9e1",
+      "--color-shadow": "#f1b4a2",
+      "--color-shadow-sec": "#ce793f",
+      "--color-verse": "#924a2a",
+      "--color-overlay": "rgba(233, 217, 225, 0.7)",
+      "--color-link": "#924a2a"
+    }
+  },
+  {
+    "id": "26",
+    "name": "Vesúvio",
+    "className": "theme-26",
+    "variables": {
+      "--color-text-by": "#43372b",
+      "--color-text-title": "#43372b",
+      "--color-bg": "#e8d58c",
+      "--color-shadow": "#a37e63",
+      "--color-shadow-sec": "#a0b66e",
+      "--color-verse": "#778762",
+      "--color-overlay": "rgba(232, 213, 140, 0.7)",
+      "--color-link": "#43372b"
+    }
+  },
+  {
+    "id": "27",
+    "name": "D",
+    "className": "theme-27",
+    "variables": {
+      "--color-text-by": "#634b40",
+      "--color-text-title": "#201c1c",
+      "--color-bg": "#c7c5bd",
+      "--color-shadow": "#634b40",
+      "--color-shadow-sec": "#9e6b4b",
+      "--color-verse": "#78756b",
+      "--color-overlay": "rgba(199, 197, 189, 0.7)",
+      "--color-link": "#634b40"
+    }
+  },
+  {
+    "id": "28",
+    "name": "D Ao Vivo Maceió",
+    "className": "theme-28",
+    "variables": {
+      "--color-text-by": "#3e322d",
+      "--color-text-title": "#3e322d",
+      "--color-bg": "#dadfe6",
+      "--color-shadow": "#8c9cc6",
+      "--color-shadow-sec": "#c3854d",
+      "--color-verse": "#926940",
+      "--color-overlay": "rgba(218, 223, 230, 0.7)",
+      "--color-link": "#3e322d"
+    }
+  }
+]
