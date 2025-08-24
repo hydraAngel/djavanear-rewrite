@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Albums from "./assets/albums.json";
+import GameScreen from "./components/GameScreen";
 
 import "./App.css";
 
@@ -20,50 +21,62 @@ async function getRandomLetter() {
 }
 
 function App() {
+  const [currentScreen, setCurrentScreen] = useState('home'); // 'home' ou 'game'
   const [albumAtual, setAlbumAtual] = useState(() => {
-    // This function will only run once during the initial render
-    return Math.floor(Math.random() * 28) + 1; // Generates a random integer from 1 to 28
+    return Math.floor(Math.random() * 28) + 1;
   });
   const [temaAtual, setTemaAtual] = useState(albumAtual);
   const [musicaAtual, setMusicaAtual] = useState(null);
   const [versosCompletosAtuais, setVersosCompletosAtuais] = useState([]);
   const [versoMostrado, setVersoMostrado] = useState(null);
   const [showWelcome, setShowWelcome] = useState(false);
+  const [imagesPreloaded, setImagesPreloaded] = useState(false);
+
+  // Preload das imagens dos álbuns
+  const preloadAlbumImages = async () => {
+    if (imagesPreloaded) return;
+    
+    try {
+      const imagePromises = Array.from({ length: 28 }, (_, i) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = resolve; // Resolve mesmo se houver erro
+          img.src = `${i + 1}.jpg`;
+        });
+      });
+      
+      await Promise.all(imagePromises);
+      setImagesPreloaded(true);
+    } catch (error) {
+      console.log('Algumas imagens não puderam ser carregadas:', error);
+      setImagesPreloaded(true); // Marca como carregado mesmo com erros
+    }
+  };
 
   useEffect(() => {
-    // chama a função e atualiza o state
     run();
+    // Iniciar preload das imagens em background
+    preloadAlbumImages();
   }, []);
 
   useEffect(() => {
-    // verifica se já existe flag no localStorage
     const visited = localStorage.getItem("hasVisited");
-
     if (!visited) {
-      // primeira vez
       setShowWelcome(true);
       localStorage.setItem("hasVisited", "true");
     }
   }, []);
 
-  /**
-   * Aplica tema com base no id (número da capa)
-   * @param {number|string} id - id do álbum/tema (ex: "1", "2", ...)
-   */
   async function applyThemeById(id) {
     try {
-      // Carrega o JSON dos temas (ajuste o caminho conforme seu projeto)
       const res = await fetch("/temas.json");
       const themes = await res.json();
-
-      // Procura o tema pelo id
       const theme = themes.find((t) => String(t.id) === String(id));
       if (!theme) {
         console.warn("Tema não encontrado:", id);
         return;
       }
-
-      // Aplica as variáveis CSS no :root
       const root = document.documentElement;
       Object.entries(theme.variables).forEach(([key, value]) => {
         root.style.setProperty(key, value);
@@ -100,6 +113,14 @@ function App() {
     run();
   };
 
+  const startGame = () => {
+    setCurrentScreen('game');
+  };
+
+  const backToHome = () => {
+    setCurrentScreen('home');
+  };
+
   useEffect(() => {
     applyThemeById(temaAtual);
   }, [temaAtual]);
@@ -111,6 +132,10 @@ function App() {
       ];
     setVersoMostrado(versoEscolhido);
   }, [versosCompletosAtuais]);
+
+  if (currentScreen === 'game') {
+    return <GameScreen onBackToHome={backToHome} imagesPreloaded={imagesPreloaded} />;
+  }
 
   return (
     <>
@@ -125,19 +150,32 @@ function App() {
           </div>
         )}
 
-        <img
-          src={albumAtual + ".jpg"}
-          onClick={handleClickImage}
-          alt={"capa do álbum " + albumAtual}
-          className="capa-album"
-        />
-        
-        <div className="info">
-          <h2 className="nome-musica">
-            <span>Djavan disse em: </span>
-            {musicaAtual}
-          </h2>
-          <h3 className="verso-escolhido">{versoMostrado}</h3>
+        <div className="main-content">
+          <div className="album-section">
+            <img
+              src={albumAtual + ".jpg"}
+              onClick={handleClickImage}
+              alt={"capa do álbum " + albumAtual}
+              className="capa-album"
+            />
+            
+            <div className="info">
+              <h2 className="nome-musica">
+                <span>Djavan disse em: </span>
+                {musicaAtual}
+              </h2>
+              <h3 className="verso-escolhido">{versoMostrado}</h3>
+            </div>
+          </div>
+
+          <div className="game-section">
+            <button className="game-button" onClick={startGame}>
+              🎮 Jogar Quiz do Djavan
+            </button>
+            <p className="game-description">
+              Teste seus conhecimentos sobre as músicas e álbuns do Djavan!
+            </p>
+          </div>
         </div>
       </div>
     </>
