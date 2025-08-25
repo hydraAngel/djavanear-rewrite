@@ -135,18 +135,161 @@ header h1 {
   border-left: 4px solid var(--color-link);
 }
 
-.showWelcome {
+/* Welcome Modal */
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.welcome-modal {
+  background: var(--color-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: welcomeSlideIn 0.5s ease-out;
+}
+
+@keyframes welcomeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.welcome-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.welcome-header h2 {
+  color: var(--color-text-title);
+  font-size: clamp(24px, 5vw, 32px);
+  margin: 0;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.welcome-section:hover {
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-section h3 {
+  color: var(--color-link);
+  font-size: clamp(18px, 4vw, 22px);
+  margin: 0 0 0.5rem 0;
+}
+
+.welcome-section p {
+  color: var(--color-text-by);
+  font-size: clamp(14px, 3vw, 16px);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.welcome-button {
   background: var(--color-link);
   color: white;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 8px;
-  font-size: clamp(14px, 2.5vw, 16px);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  order: -1; /* Coloca o welcome sempre no topo */
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: clamp(16px, 3.5vw, 18px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
   width: 100%;
+}
+
+.welcome-button:hover {
+  background: color-mix(in srgb, var(--color-link) 85%, black);
+  transform: translateY(-2px);
+}
+
+.click-hint {
+  color: var(--color-text-by);
+  font-size: clamp(12px, 2.5vw, 14px);
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+/* Media queries para welcome modal */
+@media (min-width: 768px) {
+  .welcome-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .welcome-section {
+    min-height: 180px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-modal {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .welcome-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .welcome-content {
+    gap: 1rem;
+  }
+  
+  .welcome-section {
+    padding: 0.75rem;
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+  }
 }
 
 /* Tablets */
