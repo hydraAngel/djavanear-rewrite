@@ -145,8 +145,39 @@ function App() {
       
       <div className="container">
         {showWelcome && (
-          <div className="showWelcome">
-            🎉 Bem-vindo(a) ao aplicativo! Clique na imagem para gerar um verso.
+          <div className="welcome-overlay">
+            <div className="welcome-modal">
+              <div className="welcome-header">
+                <h2>🎵 Bem-vindo ao DJAVANEAR!</h2>
+              </div>
+              
+              <div className="welcome-content">
+                <div className="welcome-section">
+                  <div className="feature-icon">🎼</div>
+                  <h3>Versos Aleatórios</h3>
+                  <p>Clique na capa do álbum para descobrir versos aleatórios das músicas do Djavan. Cada clique traz uma nova surpresa!</p>
+                </div>
+                
+                <div className="welcome-section">
+                  <div className="feature-icon">🎨</div>
+                  <h3>Temas Dinâmicos</h3>
+                  <p>O visual do app muda automaticamente baseado no álbum da música sorteada, criando uma experiência única.</p>
+                </div>
+                
+                <div className="welcome-section">
+                  <div className="feature-icon">🎮</div>
+                  <h3>Quiz Interativo</h3>
+                  <p>Teste seus conhecimentos sobre o Djavan no nosso quiz! Adivinhe as músicas através dos versos.</p>
+                </div>
+              </div>
+              
+              <button 
+                className="welcome-button" 
+                onClick={() => setShowWelcome(false)}
+              >
+                Começar a Djavanear! 🎵
+              </button>
+            </div>
           </div>
         )}
 
@@ -165,6 +196,10 @@ function App() {
                 {musicaAtual}
               </h2>
               <h3 className="verso-escolhido">{versoMostrado}</h3>
+            </div>
+            
+            <div className="click-hint">
+              💡 Clique na capa para um novo verso
             </div>
           </div>
 
