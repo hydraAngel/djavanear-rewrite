@@ -44,6 +44,8 @@ const GameScreen = ({ onBackToHome, imagesPreloaded }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
+  const [hintUsed, setHintUsed] = useState(false);
+  const [showHint, setShowHint] = useState(false);
 
   // Função para preload das imagens dos álbuns
   const preloadImages = () => {
@@ -133,6 +135,8 @@ const GameScreen = ({ onBackToHome, imagesPreloaded }) => {
   const loadNewQuestion = async () => {
     setIsLoading(true);
     setFeedback('');
+    setHintUsed(false);
+    setShowHint(false);
     
     try {
       const data = await getRandomLetter();
@@ -163,10 +167,19 @@ const GameScreen = ({ onBackToHome, imagesPreloaded }) => {
     }
   };
 
+  // Função para mostrar dica
+  const showHintHandler = () => {
+    setHintUsed(true);
+    setShowHint(true);
+  };
+
   // Função para lidar com resposta da música
   const handleSongAnswer = (selectedSong) => {
     if (selectedSong.nome === correctSong) {
-      setFeedback(`🎵 Perfeito! "${correctSong}" do álbum "${correctAlbum.name}"!`);
+      const message = hintUsed 
+        ? `🎵 Correto! "${correctSong}" do álbum "${correctAlbum.name}"! (dica usada)`
+        : `🎵 Perfeito! "${correctSong}" do álbum "${correctAlbum.name}"!`;
+      setFeedback(message);
       setScore(score + 1);
     } else {
       setFeedback(`❌ Incorreto! Era "${correctSong}" do álbum "${correctAlbum.name}"`);
@@ -211,11 +224,11 @@ const GameScreen = ({ onBackToHome, imagesPreloaded }) => {
               </div>
               <div className="step">
                 <span className="step-number">2</span>
-                <p>Escolha qual é a música correta (4 opções)</p>
+                <p>Use a dica para ver a capa do álbum (opcional)</p>
               </div>
               <div className="step">
                 <span className="step-number">3</span>
-                <p>Após responder, você verá a capa do álbum da música</p>
+                <p>Escolha qual é a música correta (4 opções)</p>
               </div>
               <div className="step">
                 <span className="step-number">4</span>
@@ -281,7 +294,7 @@ const GameScreen = ({ onBackToHome, imagesPreloaded }) => {
         
         <div className="question-container">
           <div className="album-cover-placeholder">
-            {feedback ? (
+            {feedback || showHint ? (
               <img 
                 src={`${correctAlbum.id}.jpg`} 
                 alt={correctAlbum.name}
@@ -293,7 +306,7 @@ const GameScreen = ({ onBackToHome, imagesPreloaded }) => {
                 <p>Qual música é essa?</p>
               </div>
             )}
-            {feedback && <p className="album-name">{correctAlbum.name}</p>}
+            {(feedback || showHint) && <p className="album-name">{correctAlbum.name}</p>}
           </div>
           
           <div className="verse-display">
@@ -302,13 +315,26 @@ const GameScreen = ({ onBackToHome, imagesPreloaded }) => {
           </div>
           
           {feedback && (
-            <div className={`feedback ${feedback.includes('Perfeito') ? 'success' : 'error'}`}>
+            <div className={`feedback ${feedback.includes('Correto') || feedback.includes('Perfeito') ? 'success' : 'error'}`}>
               {feedback}
             </div>
           )}
           
           {!feedback && (
             <>
+              <div className="hint-section">
+                <button 
+                  className={`hint-button ${hintUsed ? 'hint-used' : ''}`}
+                  onClick={showHintHandler}
+                  disabled={hintUsed}
+                >
+                  {hintUsed ? '💡 Dica usada' : '💡 Ver Dica'}
+                </button>
+                {showHint && !feedback && (
+                  <p className="hint-text">💡 Esta música é do álbum "{correctAlbum.name}"</p>
+                )}
+              </div>
+              
               <h4>Qual é o nome desta música?</h4>
               <div className="options">
                 {songOptions.map((song, index) => (
